@@ -1,6 +1,8 @@
 from datetime import timedelta
 from pathlib import Path
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -68,10 +70,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# postgresql://django_rw83_user:dolgOAUN5S70QJsZavZyBYtK7R6km3BD@dpg-cqc91v56l47c73cvs6cg-a.oregon-postgres.render.com/django_rw83
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": os.environ["ENGINE"],
+        "NAME": os.environ["NAME"],
+        "USER": os.environ["USER"],
+        "PASSWORD": os.environ["PASSWORD"],
+        "HOST": os.environ["HOST"],
+        "PORT": os.environ["PORT"],
     }
 }
 
