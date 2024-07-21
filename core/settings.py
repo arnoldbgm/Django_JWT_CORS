@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-iq-jejz42ek@x(6ss3nooa_u^0mu6*ty1b^(rg19cb+f^!4m+x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,3 +138,5 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=100),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=100),
 }
+
+STATIC_ROOT = BASE_DIR/'static'
