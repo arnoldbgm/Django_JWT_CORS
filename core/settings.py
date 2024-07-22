@@ -73,11 +73,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ("ENGINE"),
-        "NAME": os.environ("NAME"),
-        "USER": os.environ("USER"),
-        "PASSWORD": os.environ("PASSWORD"),
-        "HOST": os.environ("HOST")
+        "ENGINE": os.environ["ENGINE"],
+        "NAME": os.environ["NAME"],
+        "USER": os.environ["USER"],
+        "PASSWORD": os.environ["PASSWORD"],
+        "HOST": os.environ["HOST"]
     }
 }
 

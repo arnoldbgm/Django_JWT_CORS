@@ -65,3 +65,7 @@ pip install gunicorn
 ```
 pip freeze > requirements.txt
 ```
+12. Ejecutamos nuestras migraciones
+```
+python manage.py migrate
+```
