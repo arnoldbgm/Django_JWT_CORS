@@ -53,19 +53,28 @@ ALLOWED_HOSTS = ['*']
 ```
 pip install whitenoise
 ```
-9. Dentro de mi setting al final debo de agregar
+9. Dentro de tu archivo `settings.py` para que tenga estilos tu admin, debes de colocar el siguiente middleware
+```py
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+   ...
+]
+```
+
+10. Dentro de mi setting al final debo de agregar
 ```py
 STATIC_ROOT = BASE_DIR/'static'
 ```
-10. Instalamos gunicorn
+11. Instalamos gunicorn
 ```
 pip install gunicorn
 ```
-11. Hacemos por ultimo un 
+12. Hacemos por ultimo un 
 ```
 pip freeze > requirements.txt
 ```
-12. Ejecutamos nuestras migraciones
+13. Ejecutamos nuestras migraciones
 ```
 python manage.py migrate
 ```
