@@ -2,6 +2,7 @@ from datetime import timedelta
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import dj_database_url
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -73,13 +74,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": os.environ["ENGINE"],
-        "NAME": os.environ["NAME"],
-        "USER": os.environ["USER"],
-        "PASSWORD": os.environ["PASSWORD"],
-        "HOST": os.environ["HOST"]
-    }
+    "default": dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
 
 # Password validation
